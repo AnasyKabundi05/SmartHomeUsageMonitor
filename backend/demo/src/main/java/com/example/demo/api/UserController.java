@@ -1,5 +1,6 @@
 package com.example.demo.api;
 
+import com.example.demo.DTOs.UserDTO;
 import com.example.demo.domain.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
@@ -32,5 +33,14 @@ public class UserController {
         return userService.getUserById(userId);
     }
 
+    @GetMapping("/{userId}")
+    public User updateUser(@PathVariable Long userId, @RequestBody UserDTO request){
+        return userService.updateUser(userId,request);
+    }
+
+    @DeleteMapping("/{userId}")
+    public void deleteUserById(@PathVariable Long userId){
+        userService.deleteUserById(userId);
+    }
 
 }
