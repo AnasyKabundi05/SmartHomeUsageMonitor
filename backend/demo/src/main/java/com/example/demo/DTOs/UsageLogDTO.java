@@ -18,7 +18,7 @@ public class UsageLogDTO {
     private double calculatedCost;
 
     public UsageLogDTO(UsageLog usageLog){
-        this.usageId = usageLog.getUsageId();
+        this.usageId = usageLog.getUsageLogId();
         this.hoursUsed = usageLog.getHoursUsed();
         this.date = usageLog.getDate();
         this.calculatedCost = usageLog.getCalculatedCost();

@@ -25,11 +25,11 @@ public class Recommendation {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "appliance_id")
-    @JsonBackReference
-    private Appliance appliances;
+    @JsonBackReference("appliance-recommendation")
+    private Appliance appliance;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "usagelog_id")
-    @JsonBackReference
+    @JsonBackReference("usageLog-recommendation")
     private UsageLog usageLog;
 }

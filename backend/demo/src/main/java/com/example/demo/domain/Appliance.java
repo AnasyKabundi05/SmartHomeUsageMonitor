@@ -26,14 +26,14 @@ public class Appliance {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id")
-    @JsonBackReference
+    @JsonBackReference("user-appliance")
     private User user;
 
     @OneToMany(mappedBy = "appliance", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonManagedReference("usageLog-appliance")
     private List<UsageLog> usageLogs = new ArrayList<>();
 
     @OneToMany(mappedBy = "appliance", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonManagedReference("appliance-recommendation")
     private List<Recommendation> recommendations = new ArrayList<>();
 }

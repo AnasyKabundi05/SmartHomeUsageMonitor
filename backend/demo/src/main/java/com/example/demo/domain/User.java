@@ -24,6 +24,6 @@ public class User {
     private LocalDate createdAt;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonManagedReference("user-appliance")
     private List<Appliance> appliances = new ArrayList<>();
 }

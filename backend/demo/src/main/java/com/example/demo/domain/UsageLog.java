@@ -19,18 +19,18 @@ import java.util.List;
 public class UsageLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long usageId;
+    private Long usageLogId;
     private double hoursUsed;
     private LocalDate date;
     private double calculatedKwh;
     private double calculatedCost;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "usagelog_id")
-    @JsonBackReference
+    @JoinColumn(name = "appliance_id")
+    @JsonBackReference("usageLog-appliance")
     private Appliance appliance;
 
     @OneToMany(mappedBy = "usageLog", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonManagedReference("usageLog-recommendation")
     private List<Recommendation> recommendations = new ArrayList<>();
 }

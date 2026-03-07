@@ -46,6 +46,7 @@ public class RecommendationService {
 
         recommendation.setUsageLog(usageLog);
         recommendation.setCreatedAt(LocalDate.now());
+        recommendation.setAppliance(usageLog.getAppliance());
 
         return recommendationRepository.save(recommendation);
     }
