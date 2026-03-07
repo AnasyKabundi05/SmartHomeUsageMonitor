@@ -33,7 +33,7 @@ public class UserController {
         return userService.getUserById(userId);
     }
 
-    @GetMapping("/{userId}")
+    @PutMapping("/{userId}")
     public User updateUser(@PathVariable Long userId, @RequestBody UserDTO request){
         return userService.updateUser(userId,request);
     }
